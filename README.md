@@ -51,6 +51,9 @@ Where those repos show concrete AI applications and execution controls, this rep
 
 ```text
 ai-delivery-ops-skills/
+  .github/
+    workflows/
+      validate.yml
   skills/
     phased-prd-builder/
       SKILL.md
@@ -69,11 +72,17 @@ ai-delivery-ops-skills/
     evaluation-plan-template.md
     governance-review-template.md
   docs/
+    artifact-quality-checklist.md
+    github-repo-settings.md
+    installing-skills.md
     mvp-skill-set.md
     repo-plan.md
     portfolio-positioning.md
   examples/
     runbookops-delivery-example.md
+    team-ai-incident-triage-phased-prd.md
+  scripts/
+    validate_skills.py
 ```
 
 ## How To Use
@@ -92,21 +101,42 @@ We want an AI workflow that triages data pipeline incidents using approved runbo
 routes uncertain cases to humans, and records quality and cost metrics.
 ```
 
+## Install Locally
+
+Copy one or more skill folders from `skills/` into your local Codex skills directory. See [`docs/installing-skills.md`](docs/installing-skills.md) for PowerShell examples.
+
+## Examples
+
+- [`examples/runbookops-delivery-example.md`](examples/runbookops-delivery-example.md) shows the recommended artifact flow for a RunbookOps-style AI workflow.
+- [`examples/team-ai-incident-triage-phased-prd.md`](examples/team-ai-incident-triage-phased-prd.md) shows a concrete phased PRD produced for the companion incident-triage project.
+
+## Validate
+
+Run the lightweight validator from the repo root:
+
+```powershell
+python scripts\validate_skills.py
+```
+
+The validator checks that each skill has a `SKILL.md` file with valid `name` and `description` frontmatter, and that the name matches the folder. GitHub Actions runs the same check on pushes and pull requests.
+
 ## Public Portfolio Checklist
 
 - Clear README with problem, audience, and companion-project context.
 - Concise skill instructions that can be inspected without running code.
 - Templates that show the expected artifact shape.
 - Example showing how the skills apply to a realistic AI workflow.
+- Install guidance for local reuse.
+- Automated validation for skill metadata.
+- Artifact quality checklist for reviewer-ready outputs.
 - No credentials, private customer data, or production-only assumptions.
 - Honest boundaries around evaluation, governance, and production readiness.
 
 ## Roadmap
 
-- Add examples for cost-gateway planning, incident-triage iteration, and AI workflow governance.
-- Add a lightweight artifact quality checklist for each skill.
-- Add install guidance for copying selected skills into local Codex skill directories.
+- Add examples for cost-gateway planning and AI workflow governance.
 - Add optional scripts for packaging the skill pack once the format stabilizes.
+- Add release notes for `v0.1.0` after the first GitHub Actions run passes.
 
 ## License
 
