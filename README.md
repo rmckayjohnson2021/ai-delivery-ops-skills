@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/ai-delivery-ops-logo.png" alt="AI Delivery Ops Skills logo" width="260">
+</p>
+
 # AI Delivery Ops Skills
 
 Reusable Codex-style skills and templates for turning rough AI product ideas into phased delivery artifacts that teams can build, evaluate, govern, and review.
@@ -72,6 +76,10 @@ ai-delivery-ops-skills/
     evaluation-plan-template.md
     governance-review-template.md
   docs/
+    assets/
+      ai-delivery-ops-logo.png
+    index.html
+    site.css
     artifact-quality-checklist.md
     github-repo-settings.md
     installing-skills.md
@@ -84,6 +92,24 @@ ai-delivery-ops-skills/
   scripts/
     validate_skills.py
 ```
+
+## Static Skill Browser
+
+The repo includes a zero-build static browser in [`docs/index.html`](docs/index.html) with:
+
+- Skill cards
+- Template previews
+- Example artifact links
+- Copy/install commands
+- A recommended flow diagram
+
+To publish it with GitHub Pages, set Pages to deploy from the `main` branch and `/docs` folder. The public URL will be:
+
+```text
+https://rmckayjohnson2021.github.io/ai-delivery-ops-skills/
+```
+
+See [`docs/github-repo-settings.md`](docs/github-repo-settings.md).
 
 ## How To Use
 

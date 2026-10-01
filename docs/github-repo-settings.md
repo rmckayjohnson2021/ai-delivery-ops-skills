@@ -24,6 +24,7 @@ portfolio
 
 - Visibility: Public
 - Default branch: `main`
+- Pages: Deploy from branch `main`, folder `/docs`
 - Features: Issues enabled, Discussions optional, Wiki disabled unless needed
 - Pull request settings: Allow squash merge
 - Branch protection: Optional for v0.1.0; useful after collaborators or external users appear
